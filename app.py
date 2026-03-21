@@ -1,21 +1,21 @@
-from flask import Flask,jsonify
+from flask import Flask, jsonify
 import os
 
-app=Flask(__name__)
+app = Flask(__name__)
 
-books=[
-    {"id":1,"name":"A volta ao mundo em 80 dias"},
-    {"id":2 ,"name":"a arte da guerra "},
-    {"id":3 ,"name":"megulho na escuridao "}
+filmes= [
+    {"id":1,"nome":"velozes e furiosos"},
+    {"id":2,"nome":"terremoto a falha de san andreas"},
 ]
 
-@app.route ("/books", methods=["GET"])
+@app.route("/filme", methods=["GET"])
 def home():
-    return jsonify({"mensagem: ":"API de Livros"})
+    return jsonify({"mensagem": "API de filmes"})
 
 @app.route("/", methods=["GET"])
-def listar_books():
-    return jsonify(books)
+def listar_filmes():
+    return jsonify(filmes)
+
 
 if __name__ == "__main__": 
     port=int(os.environ.get("PORT",5000))
