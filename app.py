@@ -2,19 +2,19 @@ from flask import Flask,jsonify
 
 app=Flask(__name__)
 
-books=[
-    {"id":1,"name":"João"},
-    {"id":2 ,"name":"Jonas "},
-    {"id":3 ,"name":"Jerimundo "}
+jogos=[
+    {"id":1,"name":"Far Cry"},
+    {"id":2 ,"name":"The Crew"},
+    {"id":3 ,"name":"Mario Bros "}
 ]
 
-@app.route ("/books", methods=["GET"])
+@app.route ("/jogos", methods=["GET"])
 def home():
-    return jsonify({"mensagem: ":"API de Usuarios"})
+    return jsonify({"mensagem: ":"API de jogos"})
 
 @app.route("/", methods=["GET"])
 def listar_books():
-    return jsonify(books)
+    return jsonify(jogos)
 
 if __name__ == "__main__":
     app.run(port=5001)
