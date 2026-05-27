@@ -72,6 +72,5 @@ def excluir_usuario(id):
     return jsonify({
         "mensagem": "Usuário não encontrado"
     })
-
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
